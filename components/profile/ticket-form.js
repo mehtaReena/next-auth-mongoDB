@@ -33,7 +33,7 @@ function CreateTicket(props) {
         //Await for data for any desirable next steps
         const data = await res.json();
         console.log(data);
-        // window.location.reload();
+        window.location.reload();
 
     };
 
