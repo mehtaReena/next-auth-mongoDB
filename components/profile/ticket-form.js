@@ -10,7 +10,7 @@ function CreateTicket(props) {
     const onFormSubmit = async (e) => {
         e.preventDefault();
         //Getting value from useRef()
-         console.log( priority , ticket, message, email)
+        console.log(priority, ticket, message, email)
         //Validation
         if (!priority || !email.includes('@') || !ticket) {
             alert('Invalid details');
@@ -23,10 +23,10 @@ function CreateTicket(props) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                ticket:ticket,
+                ticket: ticket,
                 email: email,
                 priority: priority,
-                message:message
+                message: message
 
             }),
         });
@@ -41,52 +41,64 @@ function CreateTicket(props) {
 
     return (
         <div className={styles.tickets}>
+               <h4 style={{alignSelf:"center" ,color:"rgb(56,1,92)"}}>Create New Ticket</h4>
+            <form >
 
-            <form>
-                <div className={styles.formcontrol}>
+                <div className={styles.control}>
+                    <div className={styles.row}>
                     <label htmlFor="name">Ticket</label>
                     <input type="text" id="name" placeholder="ticket" required
-                     value={ticket} onChange={e => setTicket(e.target.value)} style={{width:"70%", height:"30%" ,
-                     padding:"10px", borderRadius :"5px"}}></input>
+                        value={ticket} onChange={e => setTicket(e.target.value)} style={{
+                            width: "70%", height: "30%",
+                            padding: "10px", borderRadius: "5px"
+                        }}></input>
+                        </div>
                 </div>
-                <div className={styles.formcontrol}>
+                <div className={styles.control}>
+                <div className={styles.row}>
                     <label htmlFor="email">Email</label>
                     <input type="email" id="email" placeholder="Your email" required
-                    value={email} onChange={e => setEmail(e.target.value)}
-                    style={{width:"70%", height:"30%" ,
-                     padding:"10px", borderRadius :"5px"}}/>
+                        value={email} onChange={e => setEmail(e.target.value)}
+                        style={{
+                            width: "70%", height: "30%",
+                            padding: "10px", borderRadius: "5px"
+                        }} />
+                        </div>
                 </div>
 
-                <div className={styles.formcontrol}>
+                <div className={styles.control}>
+                <div className={styles.row}>
                     <label htmlFor="favFramework">Priority</label>
-                    <select id="priority"  value={priority}
-                     onChange={e => setPriority(e.target.value)}
-                     style={{width:"70%", height:"30%" ,
-                     padding:"10px", borderRadius :"5px"}}>
+                    <select id="priority" value={priority}
+                        onChange={e => setPriority(e.target.value)}
+                        style={{
+                            width: "70%", height: "30%",
+                            padding: "10px", borderRadius: "5px"
+                        }}>
                         <option value="high">High</option>
                         <option value="mid">Low</option>
                         <option value="low">Mid</option>
 
                     </select>
+                    </div>
                 </div>
-                <div className={styles.formcontrol}>
+                <div className={styles.control}>
+                <div className={styles.row}>
                     <label htmlFor="message">Message</label>
                     <textarea id="message" placeholder="Leave a message"
-                    value={message} onChange={e => setMessage(e.target.value)}
-                    style={{width:"70%", height:"30%" ,
-                     padding:"10px", borderRadius :"5px"
-                     }}/>
+                        value={message} onChange={e => setMessage(e.target.value)}
+                        style={{
+                            width: "70%", height: "30%",
+                            padding: "10px", borderRadius: "5px"
+                        }} />
+                        </div>
                 </div>
 
-                <div style={{display:"flex" ,justifyContent:"center"}}>
-                    <button type="submit" onClick={onFormSubmit}
-                     style={{width:"30%", height:"40%" ,
-                     padding:"10px", borderRadius :"9px" ,
-                     color:'white',
-                     border: "1px solid white",
-                     fontWeight:"700",
-                     textTransform:"uppercase",
-                     backgroundColor:"rgb(56,1,92)"}}>Submit</button>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <button type="submit"  onClick={onFormSubmit}
+                    className={styles.button}>
+
+                        Submit</button>
                 </div>
             </form>
 

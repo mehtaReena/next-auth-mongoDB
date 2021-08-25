@@ -31,12 +31,21 @@ function Dashboard(props) {
     return (
 
 
-        <div className={styles.control}>
+        <div className={styles.container}>
 
             <CreateTicket />
-            <div className={styles.ticketsList}>
-            {loading ? <h4>Loading</h4>
 
+
+            <div className={styles.ticketsList}>
+            <table className={styles.data} >
+                    <tr>
+                        <th>Ticket</th>
+                        <th>Assign to</th>
+                        <th>Priority</th>
+                        <th>Description</th>
+                    </tr>
+                    <tbody>
+            {loading ? <h4>Loading</h4>
                 :
 
 
@@ -48,6 +57,9 @@ function Dashboard(props) {
                         priority={item.priority}
                         message={item.message} />
                 )}
+                 </tbody>
+
+</table>
 
    </div>
         </div>

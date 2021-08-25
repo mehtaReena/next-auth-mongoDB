@@ -1,11 +1,12 @@
 .container {
   min-height: 100vh;
-  padding: 10 0.5rem;
+  padding: 50px 0.5rem;
   display: flex;
-  flex-direction: column;
-  justify-content:"space-evenly";
-  align-items: center;
+  justify-content:space-evenly;
   height: 100vh;
+  width:100vw;
+
+
 }
 .tickets{
   display:flex;
@@ -13,7 +14,7 @@
   gap:1rem;
   border:1px solid black;
   box-shadow: 0px 5px 6px rgba(128, 128, 128, 0.363);
-  height:400px;
+  height:550px;
   width:500px;
 }
 .formcontrol{
@@ -23,6 +24,7 @@
   margin-top: 20px;
   width:100%;
   padding:10px;
+
 
 }
 .card{
@@ -46,33 +48,111 @@
   color:white;
 
 }
-.ticketsList{
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
 
-}
-.control {
-  display:flex;
-  width:100vw;
-  justify-content:"center";
-  justify-items:"center";
-  align-item:"center";
-  padding:40px;
-  gap:2rem;
-}
+
 .button{
   background-color:rgb(56,1,92);
+  color:white;
+  width:200px;
+  height:40px;
+  margin-top:20px;
+  border:2px solid white;
+  box-shadow: 0px 5px 6px rgba(128, 128, 128, 0.363);
+  border-radius: 7px;
+  font-weight: bold;
 }
 
-.input {
+
+.control select {
   display: block;
   font: inherit;
   width: 100%;
   border-radius: 4px;
-  border: 1px solid #38015c;
+  border: 1px solid black;
   padding: 0.25rem;
-  background-color: #f7f0fa;
+
+}
+.control textarea {
+  display: block;
+  font: inherit;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 0.25rem;
+
+}
+
+.control {
+  paddding-left:10px
+}
+
+.control label {
+  display: block;
+  color: balck;
+  font-weight: bold;
+
+}
+
+
+.control input {
+  font: inherit;
+  /* background-color: #f1e1fc; */
+  color: #38015c;
+  border-radius: 4px;
+  border: 1px solid black;
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem;
+}
+
+
+.conatiner{
+  display:flex;
+  flex-dirction:row;
+  justify-content:center;
+  justify-item: center;
+  gap:2rem;
+  padding:30px;
+}
+.row{
+  display:flex;
+  flex-dirction:row;
+   gap:2rem;
+   padding:20px;
+   justify-items:center;
+   align-items: center;
+}
+
+
+
+.data {
+
+  font-family:  Arial, Helvetica, sans-serif;
+  border: 3px solid #ddd;
+  width: 40vw;
+  border-radius: 7px;
+
+}
+
+.data td {
+  border: 2px solid #ddd;
+  padding: 5px;
+  text-align: start;
+  height: 35px;
+
+}
+
+.data tr:nth-child(even){background-color: #f2f2f2;}
+
+.data tr:hover {background-color: #ddd;
+  cursor: pointer;}
+
+.data th {
+  padding: 5px;
+  background-color: rgb(56,1,92);
+  color: white;
+  text-align: start;
+
 }
 
 

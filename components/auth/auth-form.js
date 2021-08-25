@@ -62,7 +62,7 @@ function AuthForm() {
       try {
         const result = await createUser(enteredEmail, enteredPassword);
         console.log(result)
-        if (reult.status == 401) {
+        if (result.status == 401) {
 
           console.log(result.message);
 
