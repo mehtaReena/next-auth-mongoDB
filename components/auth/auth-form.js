@@ -68,6 +68,7 @@ function AuthForm() {
 
         }
         console.log(result);
+        router.replace('/');
 
       } catch (error) {
 
