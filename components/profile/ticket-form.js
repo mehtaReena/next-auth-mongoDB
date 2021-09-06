@@ -9,7 +9,7 @@ function CreateTicket(props) {
 
     const onFormSubmit = async (e) => {
         e.preventDefault();
-        //Getting value from useRef()
+
         console.log(priority, ticket, message, email)
         //Validation
         if (!priority || !email.includes('@') || !ticket) {
@@ -41,38 +41,52 @@ function CreateTicket(props) {
 
     return (
         <div className={styles.tickets}>
-               <h4 style={{alignSelf:"center" ,color:"rgb(56,1,92)"}}>Create New Ticket</h4>
+            <div className={styles.header}>
+                <h2 style={{alignSelf:"center"}}>Create New Ticket</h2>
+            </div>
+
             <form >
 
                 <div className={styles.control}>
                     <div className={styles.row}>
+                    <div className={styles.lable}>
                     <label htmlFor="name">Ticket</label>
+                    </div>
+                    <div className={styles.width}>
                     <input type="text" id="name" placeholder="ticket" required
                         value={ticket} onChange={e => setTicket(e.target.value)} style={{
-                            width: "70%", height: "30%",
+                           height: "30%",
                             padding: "10px", borderRadius: "5px"
                         }}></input>
+                        </div>
                         </div>
                 </div>
                 <div className={styles.control}>
                 <div className={styles.row}>
+                <div className={styles.lable}>
                     <label htmlFor="email">Email</label>
+                    </div>
+                    <div className={styles.width}>
                     <input type="email" id="email" placeholder="Your email" required
                         value={email} onChange={e => setEmail(e.target.value)}
                         style={{
-                            width: "70%", height: "30%",
+                           height: "30%",
                             padding: "10px", borderRadius: "5px"
                         }} />
+                        </div>
                         </div>
                 </div>
 
                 <div className={styles.control}>
                 <div className={styles.row}>
+                <div className={styles.lable}>
                     <label htmlFor="favFramework">Priority</label>
+                    </div>
+                    <div className={styles.width}>
                     <select id="priority" value={priority}
                         onChange={e => setPriority(e.target.value)}
                         style={{
-                            width: "70%", height: "30%",
+                           height: "30%",
                             padding: "10px", borderRadius: "5px"
                         }}>
                         <option value="high">High</option>
@@ -81,17 +95,22 @@ function CreateTicket(props) {
 
                     </select>
                     </div>
+                    </div>
                 </div>
                 <div className={styles.control}>
                 <div className={styles.row}>
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" placeholder="Leave a message"
+                <div className={styles.lable}>
+                    <label htmlFor="message">Description</label>
+                    </div>
+                    <div className={styles.width}>
+                    <textarea id="message" placeholder="Desc about ticket"
                         value={message} onChange={e => setMessage(e.target.value)}
                         style={{
-                            width: "70%", height: "30%",
+                            height: "25%",
                             padding: "10px", borderRadius: "5px"
                         }} />
                         </div>
+                </div>
                 </div>
 
                 <div style={{ display: "flex", justifyContent: "center" }}>
@@ -100,6 +119,7 @@ function CreateTicket(props) {
 
                         Submit</button>
                 </div>
+
             </form>
 
         </div>
