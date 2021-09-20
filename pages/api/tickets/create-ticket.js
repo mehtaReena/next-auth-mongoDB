@@ -28,12 +28,11 @@ async function handler(req, res) {
     email,
     priority,
     message
-
  });
 
 
 
-  // client.close();
+
   res.status(201).json({ message: 'Ticket created', ...status });
 }
 

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.6",
     "bcryptjs": "^2.4.3",
     "mongodb": "^4.0.1",
     "next": "11.0.1",
