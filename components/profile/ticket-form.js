@@ -56,7 +56,7 @@ function CreateTicket(props) {
         console.log(result)
         // const response = await result.json();
         // console.log(response);
-          alert(" Email has been sent! Please check your mailbox")
+          alert(" Ticket has been issued!")
 
          window.location.reload();
 
