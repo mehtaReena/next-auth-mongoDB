@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './ticket.module.css'
 function CreateTicket(props) {
     const [email, setEmail] = useState('');
-    const [priority, setPriority] = useState('');
+    const [priority, setPriority] = useState('low');
     const [ticket, setTicket] = useState('');
     const [message, setMessage] = useState('');
     const [submitting,setSubmit] = useState(false)
@@ -109,14 +109,16 @@ function CreateTicket(props) {
                         </div>
                         <div className={styles.width}>
                             <select id="priority" value={priority}
+
                                 onChange={e => setPriority(e.target.value)}
                                 style={{
                                     height: "30%",
                                     padding: "10px", borderRadius: "5px"
                                 }}>
-                                <option value="high">High</option>
-                                <option value="mid">Low</option>
-                                <option value="low">Mid</option>
+                                 <option disabled value="Select-priority ">Select-priority</option>
+                                <option selected value="high">High</option>
+                                <option value="mid">mid</option>
+                                <option value="low" >low</option>
 
                             </select>
                         </div>
