@@ -8,7 +8,7 @@ async function handler(req, res) {
   if (req.method !== 'POST') {
     return;
   }
-  const { ticket,email, priority,message  } = req.body;
+  const { ticket,email, priority,status,message  } = req.body;
 
   const session = await getSession({ req: req });
 
@@ -23,17 +23,18 @@ async function handler(req, res) {
 
   const usersCollection = client.db().collection('tickets');
 
-  const status = await usersCollection.insertOne({
+  const response = await usersCollection.insertOne({
     ticket,
     email,
     priority,
+    status,
     message
  });
 
 
 
 
-  res.status(201).json({ message: 'Ticket created', ...status });
+  res.status(201).json({ message: 'Ticket created', ...response });
 }
 
 export default handler;

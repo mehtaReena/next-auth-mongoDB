@@ -5,11 +5,13 @@ function CreateTicket(props) {
     const [priority, setPriority] = useState('');
     const [ticket, setTicket] = useState('');
     const [message, setMessage] = useState('');
+    const [submitting,setSubmit] = useState(false)
 
 
 
     const onFormSubmit = async (e) => {
         e.preventDefault();
+        setSubmit(true)
         console.log(priority, ticket, message, email)
         //Validation
         if (!priority || !email.includes('@') || !ticket) {
@@ -26,13 +28,15 @@ function CreateTicket(props) {
                 ticket: ticket,
                 email: email,
                 priority: priority,
+                status:"In-progress",
                 message: message
 
             }),
         });
         //Await for data for any desirable next steps
         const data = await res.json();
-        console.log(data);
+        setSubmit(false)
+        // console.log(data);
 
 
 
@@ -140,6 +144,12 @@ function CreateTicket(props) {
 
                         Submit</button>
                 </div>
+                { submitting?
+                      <span>  <h3> Ticket Submitting...</h3></span>
+                      :''
+
+                }
+
 
             </form>
 

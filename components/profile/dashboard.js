@@ -43,21 +43,27 @@ function Dashboard(props) {
                         <th>Assign to</th>
                         <th>Priority</th>
                         <th>Description</th>
+                        <th>Status</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
-                    <tbody>
+
             {loading ? <h4>Loading</h4>
                 :
 
 
                 tickets.map((item, idx) =>
+
                     <Tickets
                         key= {idx}
+                        id={item._id}
                         ticket={item.ticket}
                         email={item.email}
                         priority={item.priority}
+                        status={item.status}
                         message={item.message} />
                 )}
-                 </tbody>
+
 
 </table>
 
