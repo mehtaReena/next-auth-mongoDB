@@ -15,12 +15,24 @@ function Dashboard(props) {
     useEffect(() => {
 
         getTickets();
+        getMapData();
 
     }, [])
 
     const getTickets = async () => {
         setLoading(true)
         let response = await fetch('/api/tickets/get-ticket')
+        let data = await response.json()
+        setLoading(false)
+        console.log(data.result)
+        setTickets(data.result)
+        setLoading(false)
+    }
+
+
+    const getMapData = async () => {
+        setLoading(true)
+        let response = await fetch('/api/tickets/map-data')
         let data = await response.json()
         setLoading(false)
         console.log(data.result)
@@ -46,6 +58,7 @@ function Dashboard(props) {
                         <th>Status</th>
                         <th>Edit</th>
                         <th>Delete</th>
+                        <th>Chart</th>
                     </tr>
 
             {loading ? <h4>Loading</h4>

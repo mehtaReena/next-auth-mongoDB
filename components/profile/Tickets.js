@@ -46,6 +46,7 @@ function Tickets(props) {
         <td>{props.status}</td>
         <td>✏️</td>
         <td onClick={removeMe}>❌</td>
+        <td >📊</td>
     </tr>
 
 
