@@ -119,8 +119,8 @@ function CreateTicket(props) {
                                 }}>
                                  <option disabled value="Select-priority ">Select-priority</option>
                                 <option selected value="high">High</option>
-                                <option value="mid">mid</option>
-                                <option value="low" >low</option>
+                                <option value="mid">Mid</option>
+                                <option value="low" >Low</option>
 
                             </select>
                         </div>
