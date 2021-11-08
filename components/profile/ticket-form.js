@@ -16,6 +16,8 @@ function CreateTicket(props) {
         //Validation
         if (!priority || !email.includes('@') || !ticket) {
             alert('Invalid details');
+            setSubmit(false)
+
             return;
         }
         //POST form values
